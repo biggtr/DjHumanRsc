@@ -2,6 +2,12 @@
 
 {% block content %}
 
+<form action="{%url 'employee-list'%}" method="post" class="custom-form">
+    {% csrf_token %}
+    <label for="id_search_employee">Search:</label>
+    <input type="text" name="search-employee" id="id_search_employee">
+    <button type="submit" class="submit-btn">Search</button>
+</form>
 <h1>Current Employees. </h1>
 {% for employee in employees %}
     <div>
@@ -12,7 +18,6 @@
             <a href="{% url 'employee-detail' employee.id %}">details</a>
             <a href="{% url 'employee-update' employee.id %}">update</a>
             <a href="{% url 'employee-delete' employee.id %}">delete</a>
-
 
         </p>
     </div>

@@ -9,7 +9,12 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def EmployeeListView(request):
-    employees = get_list_or_404(Employee)
+    search_query = request.POST.get("search-employee")
+
+    if search_query:
+        employees = Employee.objects.filter(name__icontains=search_query)
+    else:
+        employees = get_list_or_404(Employee)
     return render(request, "employee_list.html", context={"employees": employees})
 
 

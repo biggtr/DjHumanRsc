@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="" method = "post" class="employee-form">
+<form action="" method = "post" class="custom-form">
     {% csrf_token %}
     {{form.as_p}}
+    <label for="id_birth_date">Birth Date:</label>
+    <input type="date" name="birth_date" id="id_birth_date">
     <button type="submit" class="submit-btn">Update</button>
 </form>
 {% endblock content %}

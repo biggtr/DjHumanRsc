@@ -1,16 +1,15 @@
 /* styles.css */
 
 /* Style for form container */
-.employee-form {
+.custom-form {
     max-width: 400px;
     margin: 0 auto;
 }
 
 /* Style for form elements */
-
-.employee-form input,
-.employee-form textarea, /* Targeting email input */
-.employee-form select {
+.custom-form input,
+.custom-form textarea,
+.custom-form select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -19,7 +18,7 @@
     box-sizing: border-box;
 }
 
-.employee-form .submit-btn {
+.custom-form .submit-btn {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -28,6 +27,6 @@
     cursor: pointer;
 }
 
-.employee-form .submit-btn:hover {
+.custom-form .submit-btn:hover {
     background-color: #45a049;
 }

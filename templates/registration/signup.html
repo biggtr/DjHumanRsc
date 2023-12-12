@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="" method="post">
+<form action="" method="post" class="custom-form">
     {% csrf_token %}
     <div>
         <label for="id_email">Email:</label><br>
@@ -22,6 +22,6 @@
         <label for="id_password2">Confirm Password:</label><br>
         {{ form.password2 }}
     </div>
-    <button type="submit">Signup</button>
+    <button type="submit" class="submit-btn">Signup</button>
 </form>
 {% endblock content %}
