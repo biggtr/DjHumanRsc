@@ -7,31 +7,28 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>{% block title %}{% endblock title %}</title>
 </head>
-<body>
+<body class="site">
     <nav class="navbar">
-        <a href="{%url 'landing-page'%}">HumanRsc</a>
+        <a href="{% url 'landing-page' %}">HumanRsc</a>
         <div>
-            <a href="{%url 'employee-list'%}">List Employees</a>
-            <a href="{%url 'employee-create'%}">Add Employee</a>
-            <p>Welcome {{user.first_name}}</p>
+            <a href="{% url 'employee-list' %}">List Employees</a>
+            <a href="{% url 'employee-create' %}">Add Employee</a>
+            <p>Welcome {{ user.first_name }}</p>
         </div>
 
-        {% if user.is_authenticated == Flase%}
+        {% if user.is_authenticated == False %}
         <div>
-            <a href="{%url 'signup'%}">Sign up</a>
-            <a href="{%url 'login'%}">Login</a>
+            <a href="{% url 'signup' %}">Sign up</a>
+            <a href="{% url 'login' %}">Login</a>
         </div>
         {% endif %}
-        
-        
     </nav>
 
-
-    <main>
+    <main class="main">
         {% block content %}{% endblock content %} 
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2023 شركة الحاج احمد للأثاث</p>
             <ul>
