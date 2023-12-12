@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <nav>   
@@ -12,59 +13,72 @@
         <a href="#products">Products</a>
         <a href="#about">About Us</a>
 
-        {% if user.is_authenticated%}
+        {% if user.is_authenticated %}
         <div>
-            <p>Hello {{user.first_name}}</p>
-            <a href="{%url 'logout'%}">Logout</a>
+            <p>Hello {{ user.first_name }}</p>
+            <a href="{% url 'logout' %}">Logout</a>
         </div>
         {% else %}
         <div>
-            <a href="{%url 'signup'%}">Sign up</a>
-            <a href="{%url 'login'%}">Login</a>
+            <a href="{% url 'signup' %}">Sign up</a>
+            <a href="{% url 'login' %}">Login</a>
         </div>
         {% endif %}
     </nav>
 
     <main id="products">
-        <section id="#human-rsc">
+        <section id="human-resources-section">
             <div>
                 <h1>Streamline HR Management with our Comprehensive Employee Management System</h1>
                 <p>Our Human Resources Management SaaS offers a robust suite of functionalities empowering users to efficiently handle employee data, streamline leave management, and enhance organizational processes</p>
+                <button type='submit'>Try it</button>
             </div>
-            <img src="{% static "imgs/human-resources.jpg" %}" alt="">
+            <img src="{% static 'imgs/human-resources.jpg' %}" alt="Human Resources">
         </section>
-        <section id="#student-affairs">
+        <section id="student-affairs-section">
             <div>
                 <h1>Elevate Student Affairs with Our Comprehensive Student Management System</h1>
-                <p>we've developed a robust Student Affairs website that empowers users to efficiently manage student data and enhance administrative processes. Our feature-rich platform includes functionalities designed to simplify student management</p>
+                <p>We've developed a robust Student Affairs website that empowers users to efficiently manage student data and enhance administrative processes. Our feature-rich platform includes functionalities designed to simplify student management</p>
+                <button type='submit'>Try it</button>
+
             </div>
-            <img src="{% static "imgs/project2.jpg" %}" alt="">
+            <img src="{% static 'imgs/project2.jpg' %}" alt="Student Affairs">
         </section>
-        <section id="#higher-studies">
+        <section id="higher-studies-section">
             <div>
                 <h1>Empower Higher Education with Our Comprehensive Higher Studies Platform</h1>
                 <p>Experience the next level of educational management with our Higher Studies website. Our platform is tailored to offer an array of functionalities that facilitate seamless management and administration of higher education</p>
+                <button type='submit'>Try it</button>
+ 
             </div>
-            <img src="{% static "imgs/project3.png" %}" alt="">
-
+            <img src="{% static 'imgs/project3.png' %}" alt="Higher Studies">
         </section>
-        <section id="#laboratory-tracking">
+        <section id="laboratory-tracking-section">
             <div>
                 <h1>Efficient Laboratory Management Simplified: Our Laboratory Tracking Website</h1>
                 <p>Welcome to our Laboratory Tracking Website, your ultimate solution for streamlined laboratory management. Designed to offer comprehensive functionalities, our platform enables effortless management and maintenance of laboratory assets</p>
-            </div>
-            <img src="{% static "imgs/project4.jpg" %}" alt="">
+                <button type='submit'>Try it</button>
 
+            </div>
+            <img src="{% static 'imgs/project4.jpg' %}" alt="Laboratory Tracking">
         </section>
     </main>
     <section id="about">
         <h1>About Us</h1>
         <p>We are شركة الحاج احمد للأثاث, dedicated to transforming administrative operations across diverse sectors. Our suite of innovative Software-as-a-Service (SaaS) solutions streamlines essential processes, empowering institutions to excel in their management endeavors.</p>
         <h3>Why Choose Us</h3>
-        <p>With a relentless focus on innovation, user experience, and customer success, [Your Company Name] stands as a trusted partner in driving digital transformation. Our commitment to excellence ensures that your organization remains ahead in today's dynamic landscape.
-
-            Discover the difference that forward-thinking SaaS solutions can make. Join us on the journey towards efficiency and growth with شركة الحاج احمد للأثاث.</p>
+        <p>With a relentless focus on innovation, user experience, and customer success, شركة الحاج احمد للأثاث stands as a trusted partner in driving digital transformation. Our commitment to excellence ensures that your organization remains ahead in today's dynamic landscape. Discover the difference that forward-thinking SaaS solutions can make. Join us on the journey towards efficiency and growth with شركة الحاج احمد للأثاث.</p>
     </section>
-    <footer></footer>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 شركة الحاج احمد للأثاث</p>
+            <ul>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    
 </body>
 </html>

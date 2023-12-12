@@ -1,8 +1,27 @@
+{% extends "base.html" %}
 {% block content %}
-
 <form action="" method="post">
     {% csrf_token %}
-    {{form.as_p}}
-    <button type= "submit">Signup</button>
+    <div>
+        <label for="id_email">Email:</label><br>
+        {{ form.email }}
+    </div>
+    <div>
+        <label for="id_first_name">First name:</label><br>
+        {{ form.first_name }}
+    </div>
+    <div>
+        <label for="id_last_name">Last name:</label><br>
+        {{ form.last_name }}
+    </div>
+    <div>
+        <label for="id_password1">Password:</label><br>
+        {{ form.password1 }}
+    </div>
+    <div>
+        <label for="id_password2">Confirm Password:</label><br>
+        {{ form.password2 }}
+    </div>
+    <button type="submit">Signup</button>
 </form>
 {% endblock content %}
