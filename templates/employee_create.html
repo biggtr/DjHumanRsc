@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="" method = "post" class="employee-form">
+<form action="" method = "post" class="custom-form">
     {% csrf_token %}
     {{form.as_p}}
     <label for="id_birth_date">Birth Date:</label>

@@ -13,15 +13,9 @@
         <div>
             <a href="{% url 'employee-list' %}">List Employees</a>
             <a href="{% url 'employee-create' %}">Add Employee</a>
-            <p>Welcome {{ user.first_name }}</p>
         </div>
 
-        {% if user.is_authenticated == False %}
-        <div>
-            <a href="{% url 'signup' %}">Sign up</a>
-            <a href="{% url 'login' %}">Login</a>
-        </div>
-        {% endif %}
+        
     </nav>
 
     <main class="main">
