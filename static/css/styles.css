@@ -1,60 +1,33 @@
 /* styles.css */
 
-/* Global styles */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Make sure the body fills the entire viewport */
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
+/* Style for form container */
+.employee-form {
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.site {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Make sure the entire site fills the viewport */
+/* Style for form elements */
+
+.employee-form input,
+.employee-form textarea, /* Targeting email input */
+.employee-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-.navbar {
-    background-color: #333;
+.employee-form .submit-btn {
+    background-color: #4CAF50;
     color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.navbar a {
-    margin: 0 10px;
-}
-
-.main {
-    flex: 1; /* Fill remaining vertical space */
-    padding: 20px;
-}
-
-.footer {
-    margin-top: auto; /* Push the footer to the bottom */
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-content ul li {
-    display: inline;
-    margin: 0 10px;
+.employee-form .submit-btn:hover {
+    background-color: #45a049;
 }

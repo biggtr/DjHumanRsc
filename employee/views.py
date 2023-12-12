@@ -21,17 +21,13 @@ def EmployeeDetailView(request, employee_id):
 
 @login_required
 def EmployeeCreateView(request):
-    form = None
-    # if not request.user.is_authenticated:
-    #     return render(request, "access_denied.html")
-
     if request.method == "POST":
         form = EmployeeForm(request.POST)
         if form.is_valid():
             form.save()
-
-        else:
-            form = EmployeeForm()
+            return redirect("hr-home")
+    else:
+        form = EmployeeForm()  # Move the form instantiation here
 
     return render(request, "employee_create.html", context={"form": form})
 

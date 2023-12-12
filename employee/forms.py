@@ -5,7 +5,7 @@ from .models import Employee
 class EmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
-        fields = "__all__"
+        exclude = ["birth_date"]
 
 
 class VacationForm(forms.ModelForm):

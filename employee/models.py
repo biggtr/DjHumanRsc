@@ -15,7 +15,7 @@ class Employee(models.Model):
     )
     phone_number = models.CharField(max_length=50)
     salary = models.DecimalField(max_digits=5, decimal_places=2)
-    birth_data = models.DateField(null=True, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
 
     def __str__(self) -> str:
         return self.name
