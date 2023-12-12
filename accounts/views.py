@@ -8,8 +8,8 @@ from django.contrib.auth import login
 
 def SignupView(request):
     form = None
-    if request.user.is_authenticated:
-        return HttpResponseForbidden("You've Already signed up..")
+    # if request.user.is_authenticated:
+    #     return HttpResponseForbidden("You've Already Logged in..")
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():

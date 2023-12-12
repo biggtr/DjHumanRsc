@@ -1,5 +1,15 @@
+{% comment %} This page is the dashboard for the humanrsc saas {% endcomment %}
+
 {% extends "base.html" %}
 {% block content %}
-<h1>Welcome Home</h1>
+
+{% if user.is_authenticated %}
+    <h1>Welcome Home {{user.email}}</h1>
+
+    {% else %}
+    you're logged out please login
+    <a href="{%url 'login'%}">Login</a>
+{% endif %}
+
 
 {% endblock content %}

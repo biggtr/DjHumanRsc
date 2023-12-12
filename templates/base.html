@@ -6,9 +6,24 @@
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
+        <a href="{%url 'landing-page'%}">HumanRsc</a>
+        <div>
+            <a href="{%url 'employee-list'%}">List Employees</a>
+            <a href="{%url 'employee-create'%}">Add Employee</a>
+            <p>Welcome {{user.first_name}}</p>
+        </div>
+
+        {% if user.is_authenticated == Flase%}
+        <div>
+            <a href="{%url 'signup'%}">Sign up</a>
+            <a href="{%url 'login'%}">Login</a>
+        </div>
+        {% endif %}
+        
         
     </nav>
+
 
     <main>
         {% block content %}{% endblock content %} 

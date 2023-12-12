@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<h2>
+  Access Denied, You Don't Have Permissions To Access This Page You Have To
+  Login First.
+</h2>
+<a href="{% url 'login'%}">Login</a><br />
+<a href="{% url 'signup'%}">Signup</a>
+
+{% endblock content %}

@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect, render, get_list_or_404, get_object_or_404
 from .models import Employee, Vacation
 from .forms import EmployeeForm, VacationForm
@@ -21,6 +22,9 @@ def EmployeeDetailView(request, employee_id):
 @login_required
 def EmployeeCreateView(request):
     form = None
+    # if not request.user.is_authenticated:
+    #     return render(request, "access_denied.html")
+
     if request.method == "POST":
         form = EmployeeForm(request.POST)
         if form.is_valid():

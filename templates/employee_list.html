@@ -1,16 +1,23 @@
+
+{% block content %}
+
 <h1>Current Employees. </h1>
-
-
-
-
 {% for employee in employees %}
+    <div>
         <p>
             <strong>Name:</strong> {{ employee.name }}<nobr> | 
             <strong>Employee ID:</strong> {{ employee.id }}<nobr> |
             <strong>Email:</strong> {{ employee.email }}<nobr> |
+            <a href="{% url 'employee-detail' employee.id %}">details</a>
             <a href="{% url 'employee-update' employee.id %}">update</a>
             <a href="{% url 'employee-delete' employee.id %}">delete</a>
 
 
         </p>
+    </div>
     {% endfor %}
+
+{% endblock content %}
+
+
+
