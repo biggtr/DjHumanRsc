@@ -60,3 +60,20 @@ def EmployeeDeleteView(request, employee_id):
         employee.delete()
         return redirect("employee-list")
     return render(request, "employee_delete.html", context={"employee": employee})
+
+
+@login_required
+def VacationCreateView(request, employee_id):
+    employee = get_object_or_404(Employee, pk=employee_id)
+
+    if request.method == "POST":
+        form = VacationForm(request.POST)
+        if form.is_valid():
+            vacation = form.save(commit=False)
+            vacation.employee = employee
+            vacation.save()
+            return redirect("employee-list")
+    else:
+        form = VacationForm()  # Move the form instantiation here
+
+    return render(request, "employee_vacation.html", context={"form": form})

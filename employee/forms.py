@@ -1,5 +1,5 @@
 from django import forms
-from .models import Employee
+from .models import Employee, Vacation
 
 
 class EmployeeForm(forms.ModelForm):
@@ -10,5 +10,5 @@ class EmployeeForm(forms.ModelForm):
 
 class VacationForm(forms.ModelForm):
     class Meta:
-        model = Employee
-        fields = "__all__"
+        model = Vacation
+        exclude = ["start_date", "end_date", "employee"]

@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-console.log('Script loaded');
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('employeeForm');
 
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function validateForm() {
-        console.log("Validation started...");
         const nameInput = document.getElementById('id_name');
         const emailInput = document.getElementById('id_email');
         const addressInput = document.getElementById('id_address');

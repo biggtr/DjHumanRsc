@@ -15,4 +15,7 @@ urlpatterns = [
         views.EmployeeDeleteView,
         name="employee-delete",
     ),
+    path(
+        "vacation/<int:employee_id>/", views.VacationCreateView, name="vacation-create"
+    ),
 ]
