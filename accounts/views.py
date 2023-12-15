@@ -15,7 +15,7 @@ def SignupView(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("home")
+            return redirect("landing-home")
     else:
         form = CustomUserCreationForm()
 
