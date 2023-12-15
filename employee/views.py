@@ -21,7 +21,19 @@ def EmployeeListView(request):
 @login_required
 def EmployeeDetailView(request, employee_id):
     employee = get_object_or_404(Employee, pk=employee_id)
-    return render(request, "employee_detail.html", context={"employee": employee})
+    approved_vacations = employee.approved_vacations_count()
+    unapproved_vacations = employee.unapproved_vacations_count()
+
+    print(approved_vacations)
+    return render(
+        request,
+        "employee_detail.html",
+        context={
+            "employee": employee,
+            "approved_vacations": approved_vacations,
+            "unapproved_vacations": unapproved_vacations,
+        },
+    )
 
 
 @login_required

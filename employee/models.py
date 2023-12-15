@@ -17,6 +17,12 @@ class Employee(models.Model):
     salary = models.DecimalField(max_digits=6, decimal_places=2)
     birth_date = models.DateField(null=True, blank=True)
 
+    def approved_vacations_count(self):
+        return self.vacation_set.filter(is_approved=True).count()
+
+    def unapproved_vacations_count(self):
+        return self.vacation_set.filter(is_approved=False).count()
+
     def __str__(self) -> str:
         return self.name
 
