@@ -200,23 +200,15 @@ html, body {
 .employee-card strong {
     margin-right: 5px;
 }
-.employee-card a {
-    margin-right: 5px;
-    text-decoration: none;
-    color: #007bff;
-}
-
-.employee-card a:hover {
-    text-decoration: underline;
-}
 
 
 
 /* Style for the action buttons */
-.employee-card .action-btn {
+.action-btn {
     display: inline-block;
     padding: 8px 12px;
     margin-right: 5px;
+    margin-left: 5px;
     text-decoration: none;
     border: 1px solid #000000;
     border-radius: 4px;
@@ -224,19 +216,85 @@ html, body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.employee-card .action-btn:hover {
+.action-btn:hover {
     background-color: #363636;
     color: white;
     text-decoration: none; /* Remove underline on hover */
 }
 
-.employee-card .delete-btn {
+.delete-btn {
     border-color: #3d2c2d;
     color: #cf6570;
 }
 
-.employee-card .delete-btn:hover {
+.delete-btn:hover {
     background-color: #dc3545;
     color: white;
     text-decoration: none; /* Remove underline on hover */
 }
+/* Card styles */
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    max-width: 100%; /* Ensures the card doesn't exceed its container width */
+}
+
+.card h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sub-details-list {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.sub-details-list li {
+    margin-bottom: 8px;
+}
+
+
+
+/* Dashboard Styling */
+.dashboard {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.dashboard h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.dashboard p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+
+
+.auth-links {
+    display: flex;
+    justify-content:center;
+}
+.auth-links a{
+    margin: 10px;/* styles.css */
+
+    /* Style for the container div */
+    
+    color: #333;
+    text-decoration: none;
+}
+

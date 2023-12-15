@@ -1,18 +1,41 @@
 {% extends 'base.html' %}
+{% block title %}Employee Details{% endblock title %}
 
 {% block content %}
-<h1>{{employee.name}}'s details</h1>
-<ul>
-    <li>
-        <strong>Name:</strong> {{ employee.name }}<br>
-        <strong>Employee ID:</strong> {{ employee.id }}<br>
-        <strong>Email:</strong> {{ employee.email }}<br>
-        <strong>Address:</strong> {{ employee.address }}<br>
-        <strong>gender:</strong> {{ employee.gender }}<br>
-        <strong>Phone Number:</strong> {{ employee.phone_number }}<br>
-        <strong>Salary:</strong> {{ employee.salary }}<br>
-        <strong>Birth Data:</strong> {{ employee.birth_data }}<br>
-        
-    </li>
-</ul>
+
+<div class="card">
+    <div class="card-body">
+        <h1>{{ employee.name }}'s Details</h1>
+        <ul class="details-list">
+            <li>
+                <h3>General Information</h3>
+                <ul class="sub-details-list">
+                    <li><strong>Name:</strong> {{ employee.name }}</li>
+                    <li><strong>Employee ID:</strong> {{ employee.id }}</li>
+                    <li><strong>Email:</strong> {{ employee.email }}</li>
+                    <li><strong>Gender:</strong> {{ employee.gender }}</li>
+                    <li><strong>Birth Date:</strong> {{ employee.birth_data }}</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Contact Details</h3>
+                <ul class="sub-details-list">
+                    <li><strong>Address:</strong> {{ employee.address }}</li>
+                    <li><strong>Phone Number:</strong> {{ employee.phone_number }}</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Employment Information</h3>
+                <ul class="sub-details-list">
+                    <li><strong>Salary:</strong> {{ employee.salary }}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="functionalities">
+    <a href="{% url 'employee-update' employee.id %}" class="action-btn">Update</a>
+    <a href="{% url 'employee-delete' employee.id %}" class="action-btn delete-btn">Delete</a>
+</div>
+
 {% endblock content %}

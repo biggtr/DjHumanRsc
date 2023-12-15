@@ -138,5 +138,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 AUTH_USER_MODEL = "accounts.CustomUser"
 
-LOGIN_REDIRECT_URL = "landing-page"
-LOGOUT_REDIRECT_URL = "landing-page"
+
+LOGIN_REDIRECT_URL = "hr-home"
+LOGOUT_REDIRECT_URL = "hr-home"

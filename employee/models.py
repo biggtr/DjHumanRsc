@@ -14,7 +14,7 @@ class Employee(models.Model):
         choices=GenderChoices, max_length=1, default=None, null=True, blank=True
     )
     phone_number = models.CharField(max_length=50)
-    salary = models.DecimalField(max_digits=5, decimal_places=2)
+    salary = models.DecimalField(max_digits=6, decimal_places=2)
     birth_date = models.DateField(null=True, blank=True)
 
     def __str__(self) -> str:

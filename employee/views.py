@@ -30,7 +30,7 @@ def EmployeeCreateView(request):
         form = EmployeeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("hr-home")
+            return redirect("employee-list")
     else:
         form = EmployeeForm()  # Move the form instantiation here
 

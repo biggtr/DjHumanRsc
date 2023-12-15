@@ -9,11 +9,21 @@
 </head>
 <body >
     <nav class="navbar">
-        <a href="{% url 'landing-page' %}">HumanRsc</a>
+        <a href="{% url 'hr-home' %}">HumanRsc</a>
+        
+        <a href="{% url 'employee-list' %}">List Employees</a>
+        <a href="{% url 'employee-create' %}">Add Employee</a>
+        {% if user.is_authenticated %}
         <div>
-            <a href="{% url 'employee-list' %}">List Employees</a>
-            <a href="{% url 'employee-create' %}">Add Employee</a>
+            <p>Hello {{ user.first_name }}</p>
+            <a href="{% url 'logout' %}">Logout</a>
         </div>
+        {% else %}
+        <div>
+            <a href="{% url 'signup' %}">Sign up</a>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+        {% endif %}
     </nav>
 
     <main class="main">
@@ -30,5 +40,6 @@
             </ul>
         </div>
     </footer>
+    <script src="{% static "js/index.js" %}" defer></script>
 </body>
 </html>
