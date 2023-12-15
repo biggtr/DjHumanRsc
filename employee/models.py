@@ -23,8 +23,8 @@ class Employee(models.Model):
 
 class Vacation(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
-    start_date = models.DateField()
-    end_date = models.DateField()
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
     comments = models.TextField()
     is_approved = models.BooleanField(default=False)
 
